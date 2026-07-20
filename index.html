@@ -18,10 +18,10 @@
     --color-coal-soft: #14100c;
     --color-charcoal: #1c1611;
     --color-charcoal-light: #241c15;
-    --color-ember: #c53100;       /* ещё приглушённый — мягкий жар, не режет */
-    --color-ember-deep: #9e2700;
-    --color-flame: #b83a0c;       /* softer hover */
-    --color-gold: #d9941a;        /* мягче золото */
+    --color-ember: #a82a00;       /* тёмно-бордовый огонь — мягкий, не режет */
+    --color-ember-deep: #8a2300;
+    --color-flame: #9c2e0a;       /* soft hover */
+    --color-gold: #c98a17;        /* мягкое золото */
     --color-ash: #8a7e72;
     --color-ash-light: #a89c8e;
     --color-cream: #fff5e6;
@@ -224,7 +224,7 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255,69,0,0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(168,42,0,0.1) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
@@ -295,7 +295,7 @@
     content: "";
     position: absolute;
     inset: -40px;
-    background: radial-gradient(ellipse, rgba(255,69,0,0.2) 0%, transparent 60%);
+    background: radial-gradient(ellipse, rgba(168,42,0,0.15) 0%, transparent 60%);
     z-index: 0;
   }
   .phone {
@@ -732,7 +732,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(255,69,0,0.2) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(168,42,0,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
   .cta > * { position: relative; z-index: 1; }
@@ -992,9 +992,10 @@
 
   /* ============================================================ RESPONSIVE */
   @media (max-width: 900px) {
-    .hero__grid { grid-template-columns: 1fr; gap: var(--sp-48); justify-items: center; }
+    .hero__grid { grid-template-columns: 1fr; gap: var(--sp-48); justify-items: center; text-align: center; }
     .hero__content { text-align: center; max-width: 100%; }
-    .hero__visual { order: -1; width: 100%; display: flex; justify-content: center; align-items: center; }
+    .hero__visual { order: -1; width: 100%; max-width: 320px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
+    .phone { width: 100%; max-width: 280px; }
     .hero__cta { justify-content: center; }
     .hero__stats { justify-content: center; }
     .menu__grid { grid-template-columns: repeat(2, 1fr); }
@@ -1419,7 +1420,7 @@
     <div class="reviews">
       <div class="review">
         <div class="review__author">
-          <div class="review__avatar" style="background: #ff6b1a;">Д</div>
+          <div class="review__avatar" style="background: #b8552e;">Д</div>
           <div class="review__name">Дмитрий</div>
           <div class="review__time">вчера</div>
         </div>
@@ -1427,7 +1428,7 @@
       </div>
       <div class="review">
         <div class="review__author">
-          <div class="review__avatar" style="background: #ffb627;">М</div>
+          <div class="review__avatar" style="background: #c98a17;">М</div>
           <div class="review__name">Марина</div>
           <div class="review__time">2 дня назад</div>
         </div>
@@ -1435,7 +1436,7 @@
       </div>
       <div class="review">
         <div class="review__author">
-          <div class="review__avatar" style="background: #7cb342;">К</div>
+          <div class="review__avatar" style="background: #5d7e2f;">К</div>
           <div class="review__name">Костя</div>
           <div class="review__time">3 дня назад</div>
         </div>
