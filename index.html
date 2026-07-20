@@ -541,18 +541,24 @@
     flex-direction: column;
     gap: var(--sp-8);
     flex: 1;
+    min-width: 0;
   }
   .card__title {
     font-size: var(--text-card-title);
     font-weight: var(--fw-bold);
     line-height: 1.15;
     color: var(--color-cream);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
   }
   .card__desc {
     font-size: var(--text-caption);
     color: var(--color-ash);
     line-height: 1.5;
     flex: 1;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   .card__footer {
     display: flex;
