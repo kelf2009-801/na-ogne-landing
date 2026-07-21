@@ -309,6 +309,7 @@
     z-index: 2;
     border: 1px solid #3a2d1f;
   }
+  /* Боковые кнопки — power справа, volume слева */
   .phone::before {
     content: "";
     position: absolute;
@@ -319,6 +320,30 @@
     border-radius: 0 0 18px 18px;
     z-index: 3;
   }
+  /* Динамик — горизонтальная щель в notch */
+  .phone > .phone__screen::before {
+    content: "";
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 5px;
+    background: #2a1f15;
+    border-radius: 3px;
+    z-index: 4;
+  }
+  /* Камера — точка справа от динамика */
+  .phone > .phone__screen::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: calc(50% + 40px);
+    width: 7px; height: 7px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    border: 1px solid #0a0806;
+    z-index: 4;
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
+  }
   .phone__screen {
     background: #1a1410;
     border-radius: 34px;
@@ -326,6 +351,7 @@
     height: 580px;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   .phone__header {
     background: var(--color-coal);
@@ -345,8 +371,8 @@
     font-size: 18px;
     box-shadow: 0 0 10px rgba(197,49,0,0.3);
   }
-  .phone__bot-name { font-size: 15px; line-height: 1.2; }
-  .phone__bot-status { font-size: 12px; color: var(--color-gold); font-weight: var(--fw-regular); }
+  .phone__bot-name { font-size: 15px; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  .phone__bot-status { font-size: 12px; color: var(--color-gold); font-weight: var(--fw-regular); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
   .phone__body {
     flex: 1;
     padding: 14px;
@@ -1107,7 +1133,7 @@
         <span class="eyebrow">Гриль-бар · Доставка в Telegram</span>
         <h1 class="hero__title">
           Пицца на <span class="accent">углях</span>.<br>
-          Доставка за 30 минут.
+          Доставка за <span class="accent">30 минут</span>.
         </h1>
         <p class="hero__lead">
           Не просто пицца — а на живом огне. Крылышки BBQ, домашний лимонад, десерты.
@@ -1142,7 +1168,7 @@
             <div class="phone__header">
               <div class="phone__avatar">🔥</div>
               <div>
-                <div class="phone__bot-name">На Огне! бот</div>
+                <div class="phone__bot-name">На Огне!</div>
                 <div class="phone__bot-status">доставка · онлайн</div>
               </div>
             </div>
