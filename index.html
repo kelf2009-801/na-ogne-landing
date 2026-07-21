@@ -1573,24 +1573,20 @@
 
 <script>
   // Menu filter — tabs actually filter cards
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
-    const cards = document.querySelectorAll('#menuGrid .card');
-    console.log('Tabs found:', tabs.length, '| Cards found:', cards.length);
+  const tabs = document.querySelectorAll('.tab');
+  const cards = document.querySelectorAll('#menuGrid .card');
 
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach((t) => t.classList.remove('tab--active'));
-        tab.classList.add('tab--active');
-        const cat = tab.dataset.cat;
-        console.log('Tab clicked:', cat);
-        cards.forEach((card) => {
-          if (cat === 'all' || card.dataset.category === cat) {
-            card.hidden = false;
-          } else {
-            card.hidden = true;
-          }
-        });
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('tab--active'));
+      tab.classList.add('tab--active');
+      const cat = tab.dataset.cat;
+      cards.forEach((card) => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.hidden = false;
+        } else {
+          card.hidden = true;
+        }
       });
     });
   });
